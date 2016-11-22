@@ -6,7 +6,7 @@
 //  Copyright © 2016年 ST. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <UIKit/UIKit.h>/Users/admin/Desktop/组件化
 #import "AppDelegate.h"
 
 int main(int argc, char * argv[]) {

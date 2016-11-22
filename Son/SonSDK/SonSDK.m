@@ -7,7 +7,7 @@
 //
 
 #import "SonSDK.h"
-
+#import "SonController.h"
 @interface SonSDK()
 
 @end
@@ -39,13 +39,18 @@
         // 1.数据处理
         NSLog(@"%s %@", __FUNCTION__, [self queryComponents:url]);
         
-        // 2.界面跳转处理
+        // 2.界面跳转处理       
+        SonController *sonVC = [[SonController alloc]init];
+        NSLog(@"%s %@", __FUNCTION__, sonVC);
         UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+        
         if ([rootVC isKindOfClass:[UINavigationController class]]) {
             UINavigationController *navVC = (UINavigationController *)rootVC;
-            [navVC pushViewController:[UIViewController new] animated:YES];
+            navVC.topViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"BACK" style:UIBarButtonItemStyleDone target:self action:@selector(backModel)];
+            
+            [navVC pushViewController:sonVC animated:YES];
         }else {
-        
+            [rootVC presentViewController:sonVC animated:YES completion:nil];
         }
         return YES;
     }else {

@@ -13,7 +13,33 @@
 		7018E8EF1DE3ED3B0020E107 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7018E8ED1DE3ED3B0020E107 /* Main.storyboard */; };
 		7018E8F11DE3ED3B0020E107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7018E8F01DE3ED3B0020E107 /* Assets.xcassets */; };
 		7018E8F41DE3ED3B0020E107 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7018E8F21DE3ED3B0020E107 /* LaunchScreen.storyboard */; };
+		709839B11DE434F100D32DF2 /* SonSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 709839AE1DE434B800D32DF2 /* SonSDK.framework */; };
+		709839B21DE434F100D32DF2 /* SonBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 709839B01DE434B800D32DF2 /* SonBundle.bundle */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		709839AB1DE434B800D32DF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 709839A51DE434B800D32DF2 /* Son.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7018E8BE1DE3EC970020E107;
+			remoteInfo = Son;
+		};
+		709839AD1DE434B800D32DF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 709839A51DE434B800D32DF2 /* Son.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7018E9181DE3F3D30020E107;
+			remoteInfo = SonSDK;
+		};
+		709839AF1DE434B800D32DF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 709839A51DE434B800D32DF2 /* Son.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7018E9471DE41EA60020E107;
+			remoteInfo = SonBundle;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7018E8E11DE3ED3B0020E107 /* Main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +52,7 @@
 		7018E8F01DE3ED3B0020E107 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7018E8F31DE3ED3B0020E107 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7018E8F51DE3ED3B0020E107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		709839A51DE434B800D32DF2 /* Son.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Son.xcodeproj; path = ../Son/Son.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				709839B11DE434F100D32DF2 /* SonSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +70,10 @@
 		7018E8D81DE3ED3B0020E107 = {
 			isa = PBXGroup;
 			children = (
+				709839A51DE434B800D32DF2 /* Son.xcodeproj */,
 				7018E8E31DE3ED3B0020E107 /* Main */,
 				7018E8E21DE3ED3B0020E107 /* Products */,
+				7018E9551DE4282E0020E107 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +107,23 @@
 				7018E8E51DE3ED3B0020E107 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7018E9551DE4282E0020E107 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		709839A61DE434B800D32DF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				709839AC1DE434B800D32DF2 /* Son.app */,
+				709839AE1DE434B800D32DF2 /* SonSDK.framework */,
+				709839B01DE434B800D32DF2 /* SonBundle.bundle */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +172,12 @@
 			mainGroup = 7018E8D81DE3ED3B0020E107;
 			productRefGroup = 7018E8E21DE3ED3B0020E107 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 709839A61DE434B800D32DF2 /* Products */;
+					ProjectRef = 709839A51DE434B800D32DF2 /* Son.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7018E8E01DE3ED3B0020E107 /* Main */,
@@ -132,11 +185,36 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		709839AC1DE434B800D32DF2 /* Son.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Son.app;
+			remoteRef = 709839AB1DE434B800D32DF2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		709839AE1DE434B800D32DF2 /* SonSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SonSDK.framework;
+			remoteRef = 709839AD1DE434B800D32DF2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		709839B01DE434B800D32DF2 /* SonBundle.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SonBundle.bundle;
+			remoteRef = 709839AF1DE434B800D32DF2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		7018E8DF1DE3ED3B0020E107 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				709839B21DE434F100D32DF2 /* SonBundle.bundle in Resources */,
 				7018E8F41DE3ED3B0020E107 /* LaunchScreen.storyboard in Resources */,
 				7018E8F11DE3ED3B0020E107 /* Assets.xcassets in Resources */,
 				7018E8EF1DE3ED3B0020E107 /* Main.storyboard in Resources */,
@@ -271,8 +349,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Main/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.st.cn.Main;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -283,6 +366,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Main/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.st.cn.Main;
@@ -309,6 +396,7 @@
 				7018E8FA1DE3ED3B0020E107 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

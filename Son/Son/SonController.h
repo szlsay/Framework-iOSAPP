@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SonController.h
 //  Son
 //
 //  Created by ST on 16/11/22.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SonController : UIViewController
 
 @end
-

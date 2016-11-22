@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7018E8C31DE3EC970020E107 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7018E8C21DE3EC970020E107 /* main.m */; };
 		7018E8C61DE3EC970020E107 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7018E8C51DE3EC970020E107 /* AppDelegate.m */; };
-		7018E8C91DE3EC970020E107 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7018E8C81DE3EC970020E107 /* ViewController.m */; };
 		7018E8CC1DE3EC970020E107 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7018E8CA1DE3EC970020E107 /* Main.storyboard */; };
 		7018E8CE1DE3EC970020E107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7018E8CD1DE3EC970020E107 /* Assets.xcassets */; };
 		7018E8D11DE3EC970020E107 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7018E8CF1DE3EC970020E107 /* LaunchScreen.storyboard */; };
@@ -18,7 +17,6 @@
 		7018E9031DE3EEB90020E107 /* p3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7018E8FE1DE3EEB90020E107 /* p3.jpg */; };
 		7018E9041DE3EEB90020E107 /* p4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7018E8FF1DE3EEB90020E107 /* p4.jpg */; };
 		7018E9051DE3EEB90020E107 /* p5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7018E9001DE3EEB90020E107 /* p5.jpg */; };
-		7018E9241DE3FB5D0020E107 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7018E8C81DE3EC970020E107 /* ViewController.m */; };
 		7018E9271DE3FCBA0020E107 /* SonSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7018E9251DE3FCBA0020E107 /* SonSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7018E9281DE3FCBA0020E107 /* SonSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 7018E9261DE3FCBA0020E107 /* SonSDK.m */; };
 		7018E94D1DE41F8B0020E107 /* p1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7018E8FC1DE3EEB90020E107 /* p1.jpg */; };
@@ -28,7 +26,26 @@
 		7018E9511DE41F8B0020E107 /* p5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7018E9001DE3EEB90020E107 /* p5.jpg */; };
 		7018E9521DE41F8B0020E107 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7018E8CA1DE3EC970020E107 /* Main.storyboard */; };
 		7018E9531DE41F8B0020E107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7018E8CD1DE3EC970020E107 /* Assets.xcassets */; };
+		709839B51DE4352600D32DF2 /* SonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 709839B41DE4352600D32DF2 /* SonController.m */; };
+		709839B61DE4360800D32DF2 /* SonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 709839B41DE4352600D32DF2 /* SonController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7098397C1DE42C0900D32DF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7018E8B61DE3EC970020E107 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7018E9171DE3F3D30020E107;
+			remoteInfo = SonSDK;
+		};
+		7098397E1DE42C0900D32DF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7018E8B61DE3EC970020E107 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7018E9461DE41EA60020E107;
+			remoteInfo = SonBundle;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		7018E9221DE3F8E30020E107 /* CopyFiles */ = {
@@ -47,8 +64,6 @@
 		7018E8C21DE3EC970020E107 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7018E8C41DE3EC970020E107 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7018E8C51DE3EC970020E107 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7018E8C71DE3EC970020E107 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7018E8C81DE3EC970020E107 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7018E8CB1DE3EC970020E107 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7018E8CD1DE3EC970020E107 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7018E8D01DE3EC970020E107 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +79,8 @@
 		7018E9261DE3FCBA0020E107 /* SonSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SonSDK.m; sourceTree = "<group>"; };
 		7018E9471DE41EA60020E107 /* SonBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SonBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		7018E9491DE41EA60020E107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		709839B31DE4352600D32DF2 /* SonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SonController.h; sourceTree = "<group>"; };
+		709839B41DE4352600D32DF2 /* SonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SonController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +133,8 @@
 			children = (
 				7018E8C41DE3EC970020E107 /* AppDelegate.h */,
 				7018E8C51DE3EC970020E107 /* AppDelegate.m */,
-				7018E8C71DE3EC970020E107 /* ViewController.h */,
-				7018E8C81DE3EC970020E107 /* ViewController.m */,
+				709839B31DE4352600D32DF2 /* SonController.h */,
+				709839B41DE4352600D32DF2 /* SonController.m */,
 				7018E8FB1DE3EE970020E107 /* Image */,
 				7018E8CA1DE3EC970020E107 /* Main.storyboard */,
 				7018E8CD1DE3EC970020E107 /* Assets.xcassets */,
@@ -191,6 +208,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				7098397D1DE42C0900D32DF2 /* PBXTargetDependency */,
+				7098397F1DE42C0900D32DF2 /* PBXTargetDependency */,
 			);
 			name = Son;
 			productName = Son;
@@ -337,8 +356,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7018E8C91DE3EC970020E107 /* ViewController.m in Sources */,
 				7018E8C61DE3EC970020E107 /* AppDelegate.m in Sources */,
+				709839B51DE4352600D32DF2 /* SonController.m in Sources */,
 				7018E8C31DE3EC970020E107 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7018E9241DE3FB5D0020E107 /* ViewController.m in Sources */,
+				709839B61DE4360800D32DF2 /* SonController.m in Sources */,
 				7018E9281DE3FCBA0020E107 /* SonSDK.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +379,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7098397D1DE42C0900D32DF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7018E9171DE3F3D30020E107 /* SonSDK */;
+			targetProxy = 7098397C1DE42C0900D32DF2 /* PBXContainerItemProxy */;
+		};
+		7098397F1DE42C0900D32DF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7018E9461DE41EA60020E107 /* SonBundle */;
+			targetProxy = 7098397E1DE42C0900D32DF2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7018E8CA1DE3EC970020E107 /* Main.storyboard */ = {
@@ -599,6 +631,7 @@
 				7018E91F1DE3F3D40020E107 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7018E94A1DE41EA60020E107 /* Build configuration list for PBXNativeTarget "SonBundle" */ = {
 			isa = XCConfigurationList;
@@ -607,6 +640,7 @@
 				7018E94C1DE41EA60020E107 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
