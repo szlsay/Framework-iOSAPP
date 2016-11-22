@@ -2,15 +2,15 @@
 
 详细的静态库打包APP的方案，便于多APP集成
 
-## 1. 首先创建子APP并打包
+## 一、 首先创建子APP并打包
 
 一个sonAPP,一个mainAPP,我们将把sonAPP的工程文件集成到mainAPP中。
 
-### 1. 编写sonAPP的代码
+### 1.1 编写sonAPP的代码
 
 添加简单的事件和界面代码，并添加资源文件（分别在图片管理器assets和图片文件夹里添加文件）
 
-### 2. 将sonAPP的源代码制作成静态库
+### 1.2 将sonAPP的源代码制作成静态库
 
 ![](https://raw.githubusercontent.com/STShenZhaoliang/STImage/master/Framework-iOSAPP/1%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E5%BA%93.gif)
 
@@ -26,7 +26,7 @@
 
 创建完成后，在info中Bundle OS Type code显示的是FMWK
 
-### 3. 编译阶段（Build Phases）简介
+### 1.3 编译阶段（Build Phases）简介
 
 ![](https://raw.githubusercontent.com/STShenZhaoliang/STImage/master/Framework-iOSAPP/2phases%E7%AE%80%E4%BB%8B.gif)
 
@@ -46,11 +46,11 @@
 
 7. 运行脚本（Run Script）阶段可以使脚本得以运行，脚本可以在脚本编辑器区域当中编辑，也可以直接放入一个脚本文件进来。
 
-### 4. 编写静态库的入口文件
+### 1.4 编写静态库的入口文件
 
 入口文件负责界面的跳转与数据通信的功能，详细编写见SonSDK.h和SonSDK.m文件
 
-### 5. 静态库Build Phases的操作
+### 1.5 静态库Build Phases的操作
 
 1. 在Compile Sources中，添加除main.m和AppDelegate.m之外的所有源文件
 
@@ -62,7 +62,7 @@
 
 ![](https://github.com/STShenZhaoliang/STImage/blob/master/Framework-iOSAPP/3Header.png)
 
-### 6. 制作资源Bundle
+### 1.6 制作资源Bundle
 
 ![](https://raw.githubusercontent.com/STShenZhaoliang/STImage/master/Framework-iOSAPP/3Bundle%E5%88%B6%E4%BD%9C.gif)
 
@@ -82,13 +82,41 @@
 
 简而言之，就是和工程中的Bundle Phases中的Copy Bundle Resources中的文件一致，可以不用放LaunchScreen.storyboard。
 
-## 2. 创建主APP
+## 二、创建主APP
 因为我们是使用注册方法跳转到子APP，所以我们先添加注册信息。
 ![](https://raw.githubusercontent.com/STShenZhaoliang/STImage/master/Framework-iOSAPP/4.png)
 在工程中我们添加SonBundle.bundle和SonSDK.framework
 ![](https://raw.githubusercontent.com/STShenZhaoliang/STImage/master/Framework-iOSAPP/5.png)
-## 3. 主要的问题
-### 1. 资源加载
+## 三、打包静态库
+### 3.1 选择真机设备
+
+Command+B 编译，如果编译成功，framework的红色将消失
+
+![](https://raw.githubusercontent.com/STShenZhaoliang/STImage/master/Framework-iOSAPP/3_0.png)
+![](https://raw.githubusercontent.com/STShenZhaoliang/STImage/master/Framework-iOSAPP/3_1.png)
+
+### 3.2 选择模拟设备
+
+ 同样Command+B 编译，选择模拟器的设备
+ 
+### 3.3 打包静态库
+
+首先找到相应的文件夹
+
+![](https://raw.githubusercontent.com/STShenZhaoliang/STImage/master/Framework-iOSAPP/3_31.png)
+
+在查看静态库，查看支持的框架信息，进入SDK的文件夹，使用`lipo -info SonSDK.framework/SonSDK`
+
+![](https://raw.githubusercontent.com/STShenZhaoliang/STImage/master/Framework-iOSAPP/3_32.png)
+
+最后合成一个可以在模拟器和真机都能运行的静态库
+
+`lipo -create Debug-iphonesimulator/SonSDK.framework/SonSDK Debug-iphoneos/SonSDK.framework/SonSDK -output SonSDK.framework`
+
+![](https://raw.githubusercontent.com/STShenZhaoliang/STImage/master/Framework-iOSAPP/3_33.png)
+
+## 四、 主要的问题
+### 4.1 资源加载
 
 因为资源文件到放在Bundle中，文件的读取将从Bundle中读取。
 
@@ -106,14 +134,14 @@
 
 ```
 
-### 2. 名称冲突
+### 4.2 名称冲突
 名称冲突，一定要注意找到那些文件引起的冲突，建议是在冲突文件上面加前缀。
 
 引入源文件冲突，需要将源文件的前缀名，如ViewController.m引起了冲突，可以改为SNViewController.m
 
 资源冲突，如icon.png,在sonAPP中，我们可以修改为sn_icon.png
 
-### 3. 运行时文件
+### 4.3 运行时文件
 因为运行时代码作用在APP的运行过程中，如果引起错误的现象，一定要注意
 
 

@@ -264,7 +264,8 @@
 				TargetAttributes = {
 					7018E8BD1DE3EC970020E107 = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = Z25J3BA353;
+						ProvisioningStyle = Automatic;
 					};
 					7018E9171DE3F3D30020E107 = {
 						CreatedOnToolsVersion = 8.1;
@@ -505,10 +506,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z25J3BA353;
 				INFOPLIST_FILE = Son/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.st.cn.Son;
+				PRODUCT_BUNDLE_IDENTIFIER = com.st.cn.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -517,10 +520,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z25J3BA353;
 				INFOPLIST_FILE = Son/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.st.cn.Son;
+				PRODUCT_BUNDLE_IDENTIFIER = com.st.cn.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
