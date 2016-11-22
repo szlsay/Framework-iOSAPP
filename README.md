@@ -2,7 +2,7 @@
 
 详细的静态库打包APP的方案，便于多APP集成
 
-## 一、 首先创建子APP并打包
+## 一、 创建子APP并打包
 
 一个sonAPP,一个mainAPP,我们将把sonAPP的工程文件集成到mainAPP中。
 
@@ -144,4 +144,48 @@ Command+B 编译，如果编译成功，framework的红色将消失
 ### 4.3 运行时文件
 因为运行时代码作用在APP的运行过程中，如果引起错误的现象，一定要注意
 
+### 4.4 跳转到SonAPP
+使用注册的方式跳转到SonAPP,在SonSDK.m中编写打开Url文件
+
+```
+- (BOOL)openURL:(NSURL *)url
+{
+    // 1.scheme建议设置为app的名称
+    NSString *scheme = @"Son";
+    
+    if ([url.scheme isEqualToString:scheme]) {
+        // 1.数据处理
+        NSLog(@"%s %@", __FUNCTION__, [self queryComponents:url]);
+        
+        // 2.界面跳转处理       
+        SonController *sonVC = [[SonController alloc]init];
+        NSLog(@"%s %@", __FUNCTION__, sonVC);
+        UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+        
+        if ([rootVC isKindOfClass:[UINavigationController class]]) {
+            UINavigationController *navVC = (UINavigationController *)rootVC;
+            navVC.topViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"BACK" style:UIBarButtonItemStyleDone target:self action:@selector(backModel)];
+            
+            [navVC pushViewController:sonVC animated:YES];
+        }else {
+            [rootVC presentViewController:sonVC animated:YES completion:nil];
+        }
+        return YES;
+    }else {
+        return NO;
+    }
+}
+```
+
+如果入口控制器是从StoryBoard中加载的，需要修改控制器初始化方法，如：
+```
+- (instancetype)init
+{
+    NSBundle *bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"SonBundle" withExtension:@"bundle"]];
+    self = [UIStoryboard storyboardWithName:@"Main" bundle:bundle].instantiateInitialViewController;
+    if (self) {
+    }
+    return self;
+}
+```
 
