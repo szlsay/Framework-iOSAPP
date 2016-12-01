@@ -189,3 +189,21 @@ Command+B 编译，如果编译成功，framework的红色将消失
 }
 ```
 
+### 4.5 类别文件Category
+在静态库中如果添加了类别文件，需要在主工程中
+Target －－ Build Setting －－ Linking
+修改 Other Linker Flags 为： `-all_load` 或 `-force_load`
+
+### 4.6 添加tbd库的引用
+因为动态库只限于在当前项目中使用，所以在静态库中添加tbd库会报错。
+解决方案1：
+在静态库中，使用dylib库取缔tbd。举例：如果使用了 libc++.1.tbd,需要替换成 libstc++.6.0.9.dylib,可以从添加按钮 - add other - 使用 `shift + command + g `跳转到 /usr/lib/中找到 libstc++.6.0.9.dylib。
+
+解决方案2：
+在静态库中，不添加tbd库，在主工程中添加tbd库。
+
+### 4.7 引用第三方库
+
+在静态库中引用了第三方库，如果添加到主工程中报错，需要在主工程中，添加第三方库，注意：第三方库的配置也需要在主工程配置。
+
+

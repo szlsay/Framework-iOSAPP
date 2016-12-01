@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		70B93C101DE52D07006F4105 /* SonAggregate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 70B93C131DE52D07006F4105 /* Build configuration list for PBXAggregateTarget "SonAggregate" */;
+			buildPhases = (
+				70B93C141DE52D8D006F4105 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = SonAggregate;
+			productName = SonAggregate;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		7018E8C31DE3EC970020E107 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7018E8C21DE3EC970020E107 /* main.m */; };
 		7018E8C61DE3EC970020E107 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7018E8C51DE3EC970020E107 /* AppDelegate.m */; };
@@ -275,6 +289,10 @@
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
 					};
+					70B93C101DE52D07006F4105 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 7018E8B91DE3EC970020E107 /* Build configuration list for PBXProject "Son" */;
@@ -293,6 +311,7 @@
 				7018E8BD1DE3EC970020E107 /* Son */,
 				7018E9171DE3F3D30020E107 /* SonSDK */,
 				7018E9461DE41EA60020E107 /* SonBundle */,
+				70B93C101DE52D07006F4105 /* SonAggregate */,
 			);
 		};
 /* End PBXProject section */
@@ -349,6 +368,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "";
+		};
+		70B93C141DE52D8D006F4105 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Sets the target folders and the final framework product.\n# 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME\n# 例如: FMK_NAME = \"MyFramework\"\n#FMK_NAME=${PROJECT_NAME}\nFMK_NAME = \"SonSDK\"\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n# Working dir will be deleted after the framework creation.\n\n WRK_DIR=build\n\n\n\n# DEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\n# SIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n\nDEVICE_DIR=${WRK_DIR}/Debug-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Debug-iphonesimulator/${FMK_NAME}.framework\n\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\nmkdir -p \"${INSTALL_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\nrm -r \"${WRK_DIR}\"\nopen \"${INSTALL_DIR}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -608,6 +640,20 @@
 			};
 			name = Release;
 		};
+		70B93C111DE52D07006F4105 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		70B93C121DE52D07006F4105 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -646,6 +692,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		70B93C131DE52D07006F4105 /* Build configuration list for PBXAggregateTarget "SonAggregate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70B93C111DE52D07006F4105 /* Debug */,
+				70B93C121DE52D07006F4105 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
